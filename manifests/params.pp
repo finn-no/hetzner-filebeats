@@ -15,6 +15,8 @@ class filebeats::params {
   $tls_certificate          =  ''
   $tls_certificate_key      =  ''
   $prospectors              = []
+  $spool_size               = ''
+  $bulk_max_size            = ''
   $log_settings             = {
                                 level => 'error',
                                 to_syslog => false,

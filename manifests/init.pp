@@ -81,6 +81,8 @@ class filebeats (
   $log_settings                = {},
   $logstash_index              = $filebeats::params::logstash_index,
   $elasticsearch_index         = $filebeats::params::elasticsearch_index,
+  $spool_size                  = $filebeats::params::spool_size,
+  $bulk_max_size               = $filebeats::params::bulk_max_size,
 ) inherits ::filebeats::params {
 
   include ::filebeats::package

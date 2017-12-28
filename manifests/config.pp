@@ -20,6 +20,8 @@ class filebeats::config (
   $logstash_hosts,
   $logstash_index,
   $elasticsearch_index,
+  $spool_size,
+  $bulk_max_size,
 ){
   $config_path = $filebeats::params::config_path
 
