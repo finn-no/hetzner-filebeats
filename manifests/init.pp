@@ -107,6 +107,8 @@ class filebeats (
     logstash_hosts              => $logstash_hosts,
     logstash_index              => $logstash_index,
     elasticsearch_index         => $elasticsearch_index,
+    spool_size                  => $spool_size,
+    bulk_max_size               => $bulk_max_size,
   }
 
   Class['::filebeats::params']-> Class['::filebeats::config']
