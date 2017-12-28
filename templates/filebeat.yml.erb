@@ -25,6 +25,10 @@ filebeat:
   <% end -%>
 <% end -%>
 <% end -%>
+
+<% if @spool_size != '' -%>
+  spool_size: <%= @spool_size %>
+<% end -%>
   registry_file: /var/lib/filebeat/registry
 output:
 <% if @logstash_hosts != [] -%>
@@ -38,6 +42,9 @@ output:
 <% end -%>
 <% if @logstash_index != '' -%>
     index: <%= @logstash_index %>
+<% end -%>
+<% if @bulk_max_size != '' -%>
+    bulk_max_size: <%= @bulk_max_size %>
 <% end -%>
 <% if @tls_certificate_authorities != [] -%>
     tls:
