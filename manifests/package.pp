@@ -16,9 +16,10 @@ class filebeats::package {
           'deb' => true,
           'src' => false,
         },
-      } ~>
+      }
       package {'filebeat':
         ensure => present,
+        require => [Apt::Source['filebeats'], Class['apt::update']]
       }
     }
     default: {
