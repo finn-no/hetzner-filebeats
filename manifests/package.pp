@@ -16,7 +16,7 @@ class filebeats::package {
           'deb' => true,
           'src' => false,
         },
-      }
+      } ~>
       package {'filebeat':
         ensure => present,
       }
