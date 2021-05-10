@@ -6,6 +6,12 @@ filebeat:
 <% prospector['paths'].each do |path| -%>
         - <%= path %>
 <% end -%>
+<% if prospector['multiline_pattern'] and prospector['multiline_match'] and prospector['multiline_negate'] -%>
+      multiline:
+        pattern: "<%= prospector['multiline_pattern'] %>"
+        match: "<%= prospector['multiline_match'] %>"
+        negate: <%= prospector['multiline_negate'] %>
+<% end -%>
 <% if prospector['input_type'] -%>
       input_type: <%= prospector['input_type'] %>
 <% end -%>
